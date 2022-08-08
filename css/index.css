@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Schoolbell&display=swap');
+@import url('./animation.css');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#cabeca,
+#corpo,
+#perna_dir,
+#perna_esq,
+#braco_dir,
+#braco_esq {
+  display: none;
+}
+
+html {
+  font-family: 'Schoolbell', cursive;
+  background-color: #f0f0f0;
+}
+
+main {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-size: 80px;
+  margin: 20px 0;
+}
+
+.forca {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.forca .boneco {
+  padding: 20px;
+  width: 150px;
+}
+
+.forca .boneco svg {
+  width: 100%;
+}
+
+.forca .palavra,
+.letras-erradas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.forca .palavra span,
+.forca .letras-erradas span {
+  box-sizing: border-box;
+  display: inline-block;
+  border-bottom: 2px solid black;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  font-size: 40px;
+  width: 40px;
+  text-align: center;
+  height: 58px;
+}
+
+.forca .letras-erradas span,
+.palavra span.espaco {
+  border: none;
+}
+
+.forca .letras-erradas {
+  margin-top: 20px;
+}
+
+.botoes {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+}
+
+.status {
+  padding-top: 20px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.status h2 {
+  font-size: 50px;
+}
+
+.status p {
+  font-size: 22px;
+}
+
+button {
+  margin-top: 20px;
+  color: white;
+  box-sizing: border-box;
+  background-color: black;
+  border-top-left-radius: 255px 10px;
+  border-top-right-radius: 15px 225px;
+  border-bottom-right-radius: 225px 15px;
+  border-bottom-left-radius: 10px 255px;
+  border: solid 3px black;
+  outline: none;
+  font-family: 'Schoolbell', cursive;
+  font-size: 22px;
+  padding: 10px 20px;
+  transition: .2s;
+}
+
+footer {
+  margin-top: 40px;
+  font-size: 20px;
+  text-align: center;
+}
+
+footer p:first-child {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+footer a {
+  text-decoration: none;
+  color: #e15353;
+}
+
+footer a:visited {
+  color: #e15353;
+}
+
+@media (max-width: 550px) {
+  .forca .letras-erradas {
+    min-height: 45px;
+  }
+
+  .forca .palavra span,
+  .forca .letras-erradas span {
+    padding: 5px;
+    font-size: 22px;
+    width: 25px;
+    height: 45px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .forca {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+  
+  .forca .boneco {
+    width: 200px;
+    grid-row: 1 / 5;
+  }
+  
+  .forca .palavra {
+    min-width: 350px;
+    grid-row: 2 / 3;
+  }
+  
+  .forca .letras-erradas {
+    min-width: 350px;
+    grid-row: 3 / 4;
+    min-height: 58px;
+  }
+  
+  .botoes {
+    grid-template: 1fr / 1fr 1fr;
+    gap: 20px;
+  }
+}
