@@ -20,3 +20,4 @@ export const onlyLetters = word =>
     .normalize('NFD')
     .replace(/[^a-zA-Z\u0300-\u036f ]/g, '')
     .normalize('NFC')
+    .toLowerCase()
