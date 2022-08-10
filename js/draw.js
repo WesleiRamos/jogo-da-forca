@@ -1,18 +1,14 @@
-import { BONECO_PARTES } from './boneco.js'
+import { MAN_PARTS } from './man.js'
 
 /**
  * Desenha as partes do boneco de acordo com a quantidade de erros
  * @param {string[]} wrongLetters 
  */
-const drawBoneco = wrongLetters => {
-  for (let i = 0; i < BONECO_PARTES.length; i++) {
-    document
-      .querySelector(BONECO_PARTES[i])
-      .style.display = (i + 1) <= wrongLetters.length
-        ? 'block'
-        : 'none'
-  }
-}
+const drawMan = wrongLetters => MAN_PARTS.forEach((part, index) => {
+  document.querySelector(part).style.display = (index + 1) <= wrongLetters.length
+    ? 'block'
+    : 'none'
+})
 
 /**
  * Desenha as letras erradas que o usuário inseriu
@@ -58,7 +54,7 @@ const drawRightLetters = (word, normalized, rightLetters) => {
  * @param {import('./game').DefaultState} state
  */
 const draw = (word, state) => {
-  drawBoneco(state.wrongLetters)
+  drawMan(state.wrongLetters)
   drawWrongLetters(state.wrongLetters)
   drawRightLetters(word, state.normalized, state.rightLetters)
 }

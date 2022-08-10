@@ -27,13 +27,13 @@ const toggleElement = (query, className = '') => (add = true) =>{
 export const toggleStatus = toggleElement('.status')
 
 /**
- * Alterna a animação do boneco
- * @param {boolean} anim
- */
-export const toggleAnimBoneco = toggleElement('#boneco', 'perdeu')
-
-/**
  * Alterna a visualização dos botões dos modos de jogo
  * @returns {HTMLElement}
  */
 export const toggleButtons = toggleElement('.botoes')
+
+/**
+ * Alterna a animação do boneco
+ * @param {boolean} anim
+ */
+export const toggleAnimBoneco = toggleElement('#boneco', 'perdeu')

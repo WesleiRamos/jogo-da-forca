@@ -1,5 +1,5 @@
 import draw from './draw.js'
-import { BONECO_PARTES } from './boneco.js'
+import { MAN_PARTS } from './man.js'
 import { removeAccents } from './normalize.js'
 import { toggleAnimBoneco, toggleStatus, toggleButtons } from './toggle.js'
 
@@ -62,7 +62,7 @@ const Game = (word, attempt = '', state = null) => {
 
   draw(word, state)
 
-  if (state.wrongLetters.length === BONECO_PARTES.length) {
+  if (state.wrongLetters.length === MAN_PARTS.length) {
     toggleAnimBoneco()
     const status = toggleStatus()
     status.querySelector('h2').innerText = 'Você perdeu!'
@@ -70,7 +70,7 @@ const Game = (word, attempt = '', state = null) => {
     return
   }
 
-  if (state.normalized.every(char => state.rightLetters.includes(char) || char === ' ')) {
+  if (state.normalized.every(char => char === ' ' || state.rightLetters.includes(char))) {
     const status = toggleStatus()
     status.querySelector('h2').innerText = 'Você ganhou!'
     status.querySelector('p').innerText = 'Você acertou a palavra!'
